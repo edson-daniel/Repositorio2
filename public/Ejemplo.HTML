@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Library - Sistema de Gestión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <header class="bg-indigo-900 text-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <div class="flex items-center">
+                <i class="fas fa-book-reader text-2xl mr-3"></i>
+                <span class="text-xl font-bold tracking-wider uppercase">BiblioTech</span>
+            </div>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-indigo-300 transition">Inicio</a>
+                <a href="#" class="hover:text-indigo-300 transition">Usuarios</a>
+                <a href="#" class="hover:text-indigo-300 transition">Libros</a>
+                <a href="#" class="hover:text-indigo-300 transition">Préstamos</a>
+                <a href="#" class="text-red-400 hover:text-red-500 font-bold transition">Salir</a>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <aside id="sidebar" class="bg-slate-800 text-white w-64 min-h-screen fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-40">
+            <nav class="mt-10 px-4">
+                <a href="#" class="flex items-center py-3 px-4 rounded hover:bg-slate-700 transition mb-2 bg-indigo-600">
+                    <i class="fas fa-home mr-3 w-5 text-center"></i> Inicio
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded hover:bg-slate-700 transition mb-2">
+                    <i class="fas fa-book mr-3 w-5 text-center"></i> Libros
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded hover:bg-slate-700 transition mb-2">
+                    <i class="fas fa-hand-holding-heart mr-3 w-5 text-center"></i> Préstamos
+                </a>
+                <hr class="border-slate-700 my-4">
+                <a href="#" class="flex items-center py-3 px-4 rounded hover:bg-red-900 transition text-red-400">
+                    <i class="fas fa-sign-out-alt mr-3 w-5 text-center"></i> Salir
+                </a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10">
+            <header class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800">Panel de Control</h1>
+                <p class="text-gray-600">Bienvenido al sistema de administración de la biblioteca.</p>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-indigo-500">
+                    <p class="text-sm text-gray-500 uppercase font-bold">Total Libros</p>
+                    <p class="text-3xl font-bold text-gray-800">1,250</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-green-500">
+                    <p class="text-sm text-gray-500 uppercase font-bold">Préstamos Activos</p>
+                    <p class="text-3xl font-bold text-gray-800">84</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-500">
+                    <p class="text-sm text-gray-500 uppercase font-bold">Libros Vencidos</p>
+                    <p class="text-3xl font-bold text-gray-800">12</p>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 border-b">
+                    <h2 class="font-bold text-gray-700 text-lg">Últimos Préstamos</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-50 uppercase text-xs font-semibold text-gray-600">
+                            <tr>
+                                <th class="px-6 py-4">Usuario</th>
+                                <th class="px-6 py-4">Libro</th>
+                                <th class="px-6 py-4">Fecha</th>
+                                <th class="px-6 py-4">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700 text-sm font-medium">Juan Pérez</td>
+                                <td class="px-6 py-4 text-gray-600 text-sm">Cien Años de Soledad</td>
+                                <td class="px-6 py-4 text-gray-600 text-sm">05 Feb 2026</td>
+                                <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">Entregado</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700 text-sm font-medium">Maria Gomez</td>
+                                <td class="px-6 py-4 text-gray-600 text-sm">El Quijote</td>
+                                <td class="px-6 py-4 text-gray-600 text-sm">01 Feb 2026</td>
+                                <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-bold uppercase">Pendiente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-gray-200 py-6 mt-10">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            &copy; 2026 BiblioTech Admin. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <div id="sidebar-overlay" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        btn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
